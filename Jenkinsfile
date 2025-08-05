@@ -15,5 +15,13 @@ pipeline {
                     }
                 }
             }
+
+          stage('Deploy') {
+                steps {
+                    script {
+                        bat "docker run -d -p 8082:8081 my-h2-database-image:${env.BUILD_NUMBER}"
+                    }
+                }
+            }
     }
 }
