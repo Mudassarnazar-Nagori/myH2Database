@@ -8,5 +8,12 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+        stage('Docker Build') {
+                steps {
+                    script {
+                        docker.build("my-h2-database-image:${env.BUILD_NUMBER}")
+                    }
+                }
+            }
     }
 }
