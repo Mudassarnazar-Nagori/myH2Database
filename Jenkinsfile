@@ -4,12 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+            //below will print value of parameterized varibale BRANCH_NAME set in jenkins pipeline
                 bat 'echo %BRANCH_NAME%'
                 bat 'java -version'
                 bat 'mvn -version'
                 // Execute Maven clean install command on Windows
                 bat 'mvn clean install'
-                bat 'echo testing push hook     '
+                bat 'echo testing push hook      '
             }
         }
         stage('Docker Build') {
