@@ -4,6 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                bat 'echo %BRANCH_NAME%'
+                bat 'java -version'
+                bat 'mvn -version'
                 // Execute Maven clean install command on Windows
                 bat 'mvn clean install'
             }
