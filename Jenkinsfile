@@ -10,7 +10,7 @@ pipeline {
                 bat 'mvn -version'
                 // Execute Maven clean install command on Windows
                 bat 'mvn clean install'
-                bat 'echo testing push hook        '
+                bat 'echo testing push hook          '
             }
         }
         stage('Docker Build') {
